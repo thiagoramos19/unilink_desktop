@@ -1,0 +1,9 @@
+LEIAAA
+
+1. Arquivo molde de tudo: molde.html
+2. Cores: Rosa header - #e5a1ae | Verde - #4f603e | Outras - ver no canva
+2. Não alterar nada que está no molde.html
+4. Moldar tudo dentro da <div class="principal_[nome]", mudar o [nome] para o nome da página que está moldando
+5. A maioria das imagens tá dentro da pasta img.
+6. Utilizar o css molde também, que é o style_molde.css, é que ele tem todas as pré-definições do molde.html, não muda nada nele tbm não.
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UniLink - Login</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="div_central">
+            <img src="img/logo_unilink.png" alt="Logo Unilink" width="300">
+            <div class="box">
+                <h1>Dados pessoais:</h1>
+                <input type="text" name="nome" placeholder="Nome">
+                <input type="text" onfocus="this.type='date'" placeholder="Data de nascimento">
+
+                <div class="dados">
+                    <select name="predio" id="predio">
+                        <option value="CCH">CCH</option>
+                        <option value="CCET">CCET</option>
+                        <option value="IBIO">IBIO</option>
+                        <option value="CLA">CLA</option>
+                    </select>
+                    <select name="curso" id="curso">
+                        <option value="biblioteconomia">Biblioteconomia</option>
+                        <option value="si">Sistemas de Informação</option>
+                        <option value="biologia">Biologia</option>
+                        <option value="artes">Artes</option>
+                    </select>
+                </div>
+                
+                <button class="escolha1"> Prosseguir </button>
+              
+                <button class="escolha2"> Voltar </button>
+            </div>
+        </div>
+    </body>
+</html>
