@@ -6,7 +6,15 @@ LEIAAA
 4. Cores: Rosa header - #e5a1ae | Verde - #4f603e | Outras - ver no canva
 5. Não alterar nada que está no molde.html
 6. A maioria das imagens tá dentro da pasta img.
-7. 
+7. Essas páginas precisam estar com esses nomes:
+    - usuarios.html e usuarios_style.css
+    - jogaprarolo.html e jogaprarolo_style.css
+    - eventos.html e eventos_style.css
+    - dm.html e dm_style.css
+    - seuperfil.html e seuperfil_style.css
+    - as outras que vocês forem criando, se baseiem nesse formato assim
+
+
 
 
 
