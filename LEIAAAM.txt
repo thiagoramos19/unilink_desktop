@@ -13,6 +13,8 @@ LEIAAA
     - dm.html e dm_style.css
     - seuperfil.html e seuperfil_style.css
     - as outras que vocês forem criando, se baseiem nesse formato assim
+8. link do canva, peguem as cores lá: https://www.canva.com/design/DAG3Y2X6CRE/srW-0po0scdd-PT3UB8-5Q/edit?utm_content=DAG3Y2X6CRE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 
 
 
