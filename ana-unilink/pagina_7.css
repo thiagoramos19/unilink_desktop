@@ -1,0 +1,123 @@
+.principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    gap: 20px;
+}
+
+.card-perfil {
+    background-color: #1140af;
+    color: white;
+    border-radius: 25px;
+    padding: 45px;
+    display: flex;
+    gap: 15px;
+    width: 90%;
+    height: 340px;
+    max-width: 900px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Nunito', sans-serif;
+}
+
+.perfil-esquerdo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-right: 30px;
+}
+
+.perfil-avatar {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+}
+
+.perfil-esquerdo h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 2px;
+  
+}
+
+.perfil-esquerdo p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.perfil-direito {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.perfil-direito h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    
+}
+
+.perfil-direito p {
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.perfil-direito ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 5px 0 0 0;
+}
+
+.perfil-direito li {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.botoes-acao {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 900px;
+}
+
+.btn-rejeitar,
+.btn-aceitar {
+    border: none;
+    border-radius: 50px;
+    width: 180px;
+    height: 57px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.btn-rejeitar:hover,
+.btn-aceitar:hover {
+    transform: scale(1.05);
+}
+
+.btn-rejeitar {
+    background-color: #D9534F;
+}
+
+.btn-aceitar {
+    background-color: #39ce39;
+}
+
+.btn-aceitar img{
+ filter: invert(1);
+}
