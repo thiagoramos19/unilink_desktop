@@ -182,8 +182,8 @@ header{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    width: 950px;
+    height: 900x;
+    width: 600px;
     overflow: hidden;
 }
 .chat-header {
@@ -269,7 +269,6 @@ header{
     border-top: 1px solid #E0E0E0;
     flex-shrink: 0;
 }
-
 .message-input {
     flex-grow: 1;
     padding: 15px 20px;
@@ -283,7 +282,6 @@ header{
     border: 3px solid #4f603e;
     outline: none;
 }
-
 .message-input::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
@@ -292,11 +290,11 @@ header{
     width: 55px;
     height: 55px;
     border-radius: 50%;
+	background-image: url('img/message.png');
     background-color: #e5a1ae;
     border: 3px solid #e5a1ae;
     cursor: pointer;
     flex-shrink: 0;
-    background-image: url('img/send_icon.png');
     background-size: 60%;
     background-position: center 55%;
     background-repeat: no-repeat;
