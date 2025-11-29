@@ -10,15 +10,139 @@
     <body>
         <div class="div_central">
             <img src="img/logo_unilink.png" alt="Logo Unilink" width="300">
-            <div class="box">
+            <div id="box">
                 <h1>Faça seu cadastro:</h1>
-                <input type="email" name="email" placeholder="Email @edu.unirio.br">
-                <input type="password" name="senha" placeholder="Senha">
-                <input type="password" name="confirmar_senha" placeholder="Confirmar senha">
-                <button class="escolha1"> Criar conta </button>
+                <input type="email" id="email" placeholder="Email @edu.unirio.br">
+                
+                <div class="input-com-icone">
+                    <input type="password" id="senha" placeholder="Senha">
+                    <span class="icone-senha" onclick="senhaVisibilidade()">
+                    <i id="eyeIcon1" class="olho-fechado">🔒</i> 
+                    </span>
+                </div>
+                
+                <div class="input-com-icone">
+                    <input type="password" id="confirmar_senha" placeholder="Confirmar senha">
+                    <span class="icone-senha" onclick="confirmarSenhaVisibilidade()">
+                        <i id="eyeIcon2" class="olho-fechado">🔒</i> 
+                    </span>
+                </div>
+
+                <button id="escolha1" onclick="validarCadastro()"> Criar conta </button>
               
-                <button class="escolha2"> Voltar </button>
+                <button id="escolha2"> Voltar </button>
             </div>
         </div>
+
+                <script>
+            function senhaVisibilidade() {
+                const senhaInput = document.getElementById('senha');
+                const icon = document.getElementById('eyeIcon1');
+
+                if (senhaInput.type === 'password') {
+                    senhaInput.type = 'text';
+                    icon.textContent = '👁️';
+                    icon.classList.remove('olho-fechado');
+                    icon.classList.add('olho-aberto');
+                } else {
+                    senhaInput.type = 'password';
+                    icon.textContent = '🔒';
+                    icon.classList.remove('olho-aberto');
+                    icon.classList.add('olho-fechado');
+                }
+            }
+
+            function confirmarSenhaVisibilidade() {
+                const senhaInput = document.getElementById('confirmar_senha');
+                const icon = document.getElementById('eyeIcon2');
+
+                if (senhaInput.type === 'password') {
+                    senhaInput.type = 'text';
+                    icon.textContent = '👁️';
+                    icon.classList.remove('olho-fechado');
+                    icon.classList.add('olho-aberto');
+                } else {
+                    senhaInput.type = 'password';
+                    icon.textContent = '🔒';
+                    icon.classList.remove('olho-aberto');
+                    icon.classList.add('olho-fechado');
+                }
+            }
+            
+            function validarCadastro() { 
+
+                const emailInput = document.getElementById("email");
+                const senhaInput = document.getElementById("senha");
+                const confirmarSenhaInput = document.getElementById("confirmar_senha");
+                const elementoRef = document.getElementById("escolha1");
+                const divBox = document.getElementById("box");
+
+                const emailDigitado = emailInput.value.trim(); 
+                const senhaDigitada = senhaInput.value;
+                const confirmarSenhaDigitada = confirmarSenhaInput.value; 
+
+                const erroAnterior = document.getElementById("mensagemdeerro");
+
+         
+                if (erroAnterior) {
+                    erroAnterior.remove(); 
+                }
+                emailInput.classList.remove('borda-erro');
+                senhaInput.classList.remove('borda-erro');
+                confirmarSenhaInput.classList.remove('borda-erro'); 
+
+                if(!emailDigitado.includes("@edu.unirio.br")){
+                    emailInput.classList.add('borda-erro');
+                    
+                    const mensagemDeErro = document.createElement("p");
+                    mensagemDeErro.id="mensagemdeerro";
+                    mensagemDeErro.textContent = "Email deve ter o formato @edu.unirio.br";
+
+                    divBox.insertBefore(mensagemDeErro, elementoRef);
+                    return;
+                }
+                
+                else if(senhaDigitada === ""){
+                    senhaInput.classList.add('borda-erro'); 
+                    
+                    const mensagemDeErro = document.createElement("p");
+                    mensagemDeErro.id="mensagemdeerro";
+                    mensagemDeErro.textContent = "Digite uma senha!";
+                    
+                    divBox.insertBefore(mensagemDeErro, elementoRef);
+                    return;
+                }
+                
+                else if(confirmarSenhaDigitada === ""){
+                    confirmarSenhaInput.classList.add('borda-erro');
+                    
+                    const mensagemDeErro = document.createElement("p");
+                    mensagemDeErro.id="mensagemdeerro";
+                    mensagemDeErro.textContent = "Confirme a sua senha!";
+                    
+                    divBox.insertBefore(mensagemDeErro, elementoRef);
+                    return;
+                }
+                
+                else {
+                    if (senhaDigitada === confirmarSenhaDigitada) {
+                        
+                        alert("Cadastro realizado! Bem-vindo(a), " + emailDigitado + "!");
+                        window.location.href = "home.html";
+                    } 
+                    else { 
+                        senhaInput.classList.add('borda-erro');
+                        confirmarSenhaInput.classList.add('borda-erro');
+
+                        const mensagemDeErro = document.createElement("p");
+                        mensagemDeErro.id="mensagemdeerro";
+                        mensagemDeErro.textContent = "Senhas não são iguais!";
+                        
+                        divBox.insertBefore(mensagemDeErro, elementoRef);
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
+
