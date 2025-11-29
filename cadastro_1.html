@@ -10,12 +10,12 @@
     <body>
         <div class="div_central">
             <img src="img/logo_unilink.png" alt="Logo Unilink" width="300">
-            <div class="box">
+            <div id="box">
                 <h1>Dados pessoais:</h1>
-                <input type="text" name="nome" placeholder="Nome">
-                <input type="text" onfocus="this.type='date'" placeholder="Data de nascimento">
+                <input type="text" id="nome" placeholder="Nome">
+                <input type="text" onfocus="this.type='date'" id="dataN" placeholder="Data de nascimento">
 
-                <div class="dados">
+                <div id="dados">
                     <select name="predio" id="predio">
                         <option value="CCH">CCH</option>
                         <option value="CCET">CCET</option>
@@ -30,10 +30,56 @@
                     </select>
                 </div>
                 
-                <button class="escolha1"> Prosseguir </button>
-              
-                <button class="escolha2"> Voltar </button>
+                <button id="escolha1" onclick="validarCadastro()"> Prosseguir </button>
+                
+                <button id="escolha2" onclick="window.location.href = 'login.html'"> Voltar </button>
             </div>
         </div>
+        <script>
+            function validarCadastro(){
+
+                const nomeInput = document.getElementById("nome");
+                const dataNInput = document.getElementById("dataN");
+                const divSelect = document.getElementById("dados");
+                const divBox = document.getElementById("box");
+                const elementoProsseguir = document.getElementById("escolha1");
+                const erroAnterior = document.getElementById("mensagemdeerro");
+                
+                if (erroAnterior) {
+                    erroAnterior.remove();
+                    nomeInput.classList.remove('borda-erro');
+                    dataNInput.classList.remove('borda-erro');
+                }
+                
+
+                const nomeDigitado = nomeInput.value.trim();
+                const dataNDigitada = dataNInput.value.trim();
+
+                if (nomeDigitado === "") {
+                    nomeInput.classList.add('borda-erro');
+
+                    const mensagemDeErro = document.createElement("p");
+                    mensagemDeErro.id="mensagemdeerro";
+                    mensagemDeErro.textContent = "Digite seu nome!";
+                    
+                    divBox.insertBefore(mensagemDeErro, elementoProsseguir);
+                    return;
+                }  
+                else if (dataNDigitada === "") {
+                    dataNInput.classList.add('borda-erro');
+
+                    const mensagemDeErro = document.createElement("p");
+                    mensagemDeErro.id="mensagemdeerro";
+                    mensagemDeErro.textContent = "Digite uma data de nascimento!";
+                    
+                    divBox.insertBefore(mensagemDeErro, elementoProsseguir);
+                    return;
+                }
+                else{
+                    window.location.href = "cadastro_2.html";
+                }
+                
+            }
+        </script>
     </body>
 </html>
