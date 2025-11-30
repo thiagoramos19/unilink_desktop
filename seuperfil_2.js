@@ -10,14 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (concluirButton) {
         concluirButton.addEventListener('click', () => {
-            const coisas = coisasTextarea ? coisasTextarea.value.trim().split('\n') : [];
+
+            const coisas = coisasTextarea ? coisasTextarea.value.trim().split('\n').filter(c => c.trim() !== '') : [];
             const frase = fraseInput ? fraseInput.value.trim() : '';
             const mood = moodInput ? moodInput.value.trim() : '';
 
-            console.log('--- DADOS ENVIADOS PARA SALVAMENTO ---');
-            console.log('Três coisas:', coisas);
-            console.log('Frase:', frase);
-            console.log('Mood:', mood);
+            const profileData = {
+                coisas: coisas.slice(0, 3), 
+                fraseBio: frase,
+                moodAtual: mood
+            };
+
+            localStorage.setItem('userProfileData', JSON.stringify(profileData));
             
             alert('Perfil atualizado'); 
 
@@ -28,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (voltarButton) {
         voltarButton.addEventListener('click', () => {
             console.log('Alterações canceladas');
-
             window.location.href = profilePageUrl;
         });
     }
