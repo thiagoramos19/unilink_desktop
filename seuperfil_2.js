@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fraseInput = document.querySelector('.bio-block input[type="text"][placeholder="Descreva-se em uma frase."]');
     const moodInput = document.querySelector('.bio-block input[type="text"][placeholder="Qual seu mood atual?"]');
 
-    const profilePageUrl = 'seuperfil_1.html';
+    const profilePageUrl = 'seuperfil.html';
 
     if (concluirButton) {
         concluirButton.addEventListener('click', () => {
