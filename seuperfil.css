@@ -1,77 +1,32 @@
-*{
+* {
     font-family: Nunito, sans-serif;
 }
 
 html, body {
-    height: 100%; 
-    margin: 0;   
-    padding: 0;  
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-body{
+body {
     display: flex;
 }
 
-header{
+header {
     width: 100%;
     height: 77px;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     background-color: #e5a1ae;
-	padding: 0;
+    padding: 0;
 }
 
-
-.menu_home {
-    background-color: #4f603e;
-    width: 80px;
-    height: 100%;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    flex-direction: column;
-}
-
-.menu_real{
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    flex-direction: column;
-}
-
-.menu_conta{
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    flex-direction: column;
-}
-
-.icon{
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    padding: 20px;
-    width: 41px;
-    height: 37px;
-}
-
-#unilink{
+#unilink {
     font-size: 30px;
     color: white;
 }
-.organizador{
-    width: 100%;
-    height: 100%;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    flex-direction: column;
-}
-.principal{
-    width: 100%;
-    height: 100%;
-}
+
 .menu_home {
     background-color: #4f603e;
     width: 80px;
@@ -87,24 +42,19 @@ header{
 .menu_real,
 .menu_conta {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 }
 
 .icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; 
+    padding: 20px;
     width: 41px;
     height: 37px;
 }
 
-#unilink {
-    font-size: 30px;
-    color: white;
-}
 .organizador {
     width: 100%;
     height: 100%;
@@ -113,6 +63,7 @@ header{
     align-items: center;
     flex-direction: column;
 }
+
 .principal {
     width: 100%;
     height: 100%;
@@ -121,6 +72,13 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.profile-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 40px;
 }
 
 .profile-content {
@@ -156,17 +114,18 @@ header{
     text-align: left;
     padding-top: 20px;
     min-width: 400px;
-	align-items: center;
-}
-
-.profile-title {
-    font-size: 2.2em;
-    font-weight: 700;
-    color: #333333;
-    margin-bottom: 40px;
+    align-items: flex-start;
+	
+	background-color: #f8f8f8; 
+    border: 1px solid #e0e0e0; 
+    border-radius: 12px;
+    padding: 30px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+    padding-top: 20px;
 }
 
 .bio-block {
+    width: 100%;
     margin-bottom: 30px;
 }
 
@@ -181,15 +140,23 @@ header{
     list-style: disc;
     padding-left: 20px;
     color: #333333;
+    margin-top: 0;
+}
+
+.bio-list li {
+    margin-bottom: 5px;
+    font-size: 1.1em;
 }
 
 .bio-phrase, .bio-mood {
     font-style: italic;
     font-size: 1.1em;
     color: #333333;
+    margin-top: 0;
 }
 
 .edit-button-container {
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     margin-top: 30px;
