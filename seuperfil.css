@@ -78,7 +78,8 @@ header {
     font-size: 2.2em;
     font-weight: 700;
     color: #333333;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+	margin0-top: 10px;
 }
 
 .profile-content {
@@ -86,7 +87,6 @@ header {
     gap: 50px;
     width: 80%;
     max-width: 900px;
-    margin-top: 30px;
 }
 
 .profile-info-left {
