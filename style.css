@@ -1,23 +1,30 @@
 *{
-    font-family: nu, sans-serif;
+    font-family: Nunito, sans-serif;
 }
 
-html, body {
-    height: 100%; 
-    margin: 0;   
-    padding: 0;  
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 h1, p{
     margin: 0;
 }
 
+#mensagemdeerro{
+    color: red;
+}
+
+.borda-erro {
+    border: 2px solid red !important;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
 
 body {
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    
 }
 
 .div_central{
@@ -28,7 +35,7 @@ body {
     align-items: center; 
 }
 
-.box{
+#box{
     width: 325px;
     height: 90%;
     border-radius: 20px;
@@ -39,11 +46,37 @@ body {
     flex-direction: column;
     padding: 20px;
 }
+
+/* INPUT GERAL */
 input{
     border-radius: 25px;
     width: 325px;
     height: 40px;
     font-size: 18px;
+}
+
+
+#box input {
+    width: 100%;
+}
+
+
+.input-com-icone {
+    position: relative;
+    width: 325px;
+}
+
+
+
+.icone-senha {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #4f603e;
+    font-size: 18px;
+    z-index: 10;
 }
 
 select{
@@ -53,7 +86,7 @@ select{
     font-size: 18px;
 }
 
-.escolha1{
+#escolha1{
     border-radius: 25px;
     width: 325px;
     height: 40px;
@@ -62,7 +95,7 @@ select{
     color: white;
 }
 
-.escolha2{
+#escolha2{
     border-radius: 25px;
     width: 325px;
     height: 40px;
@@ -72,7 +105,7 @@ select{
     color: white;
 }
 
-.dados{
+#dados{
     justify-content: space-between;
     width: 325px;
 }
