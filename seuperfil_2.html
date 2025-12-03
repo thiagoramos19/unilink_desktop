@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniLink - Editar Perfil</title>
-    <link rel="stylesheet" href="seuperfil_2.css">
+    <link rel="stylesheet" href="seuperfil_2.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -18,7 +18,7 @@
         </div>
         <div class="menu_conta">
             <a href="login.html"><img src="img/sair.png" alt="sair" class="icon"></a>
-            <a href="seuperfil.html" class="active-profile-link" style="background-color: #60754c;"><img src="img/seuperfil.png" alt="seu perfil" class="icon"></a>
+            <a href="seuperfil.html" class="active-profile-link" style="background-color: #60754c;"><img src="img/seuperfil.png" alt="seu perfil" class="icon"></a> 
         </div>
     </div>
 
@@ -27,48 +27,47 @@
             <p id="unilink">unilink</p>
         </header>
 
-        <div class="principal profile-page">
+        <main class="principal profile-page">
             <h2 class="profile-title">Editar Perfil</h2>
             <div class="profile-content">
-                <div class="profile-info-left">
+                
+                <aside class="profile-info-left">
                     <div class="profile-avatar"></div>
                     <div class="profile-details">
                         <p class="profile-name">Ciclano, 19</p>
                         <p class="profile-info">CCH</p>
                         <p class="profile-course">Biblioteconomia</p>
                     </div>
-                </div>
+                </aside>
 
-                <div class="profile-info-right">
+                <section class="profile-info-right">
+                    
                     <div class="bio-block">
                         <h3 class="bio-title">Três coisas que amo:</h3>
-                        <textarea class="editable-textarea" placeholder="Liste as três coisas que você mais ama">coisa 1
-coisa 2
-coisa 3</textarea>
+                        <textarea class="editable-textarea" id="coisas-que-amo" placeholder="Liste as três coisas que você mais ama"></textarea>
                     </div>
 
                     <div class="bio-block">
                         <h3 class="bio-title">Sobre mim em uma frase:</h3>
-                        <input type="text" class="editable-input" value="???" placeholder="Descreva-se em uma frase.">
+                        <input type="text" class="editable-input" id="frase-sobre-mim" placeholder="Descreva-se em uma frase.">
                     </div>
 
                     <div class="bio-block">
                         <h3 class="bio-title">Meu mood atual:</h3>
-                        <input type="text" class="editable-input" value="???" placeholder="Qual seu mood atual?">
+                        <input type="text" class="editable-input" id="meu-mood" placeholder="Qual seu mood atual?">
                     </div>
 
                     <div class="action-buttons-container">
                         <button class="button-voltar">Voltar</button>
                         <button class="button-concluir">Concluir</button>
                     </div>
-                </div>
+                </section>
             </div>
-        </div>
+        </main>
     </div>
-
-	<script src="seuperfil_2.js"></script>
+    
+    <script src="seuperfil_2.js"></script>
 </body>
 </html>
-
 
 
