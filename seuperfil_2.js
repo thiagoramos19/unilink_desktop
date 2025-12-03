@@ -1,17 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const concluirButton = document.querySelector('.button-concluir');
     const voltarButton = document.querySelector('.button-voltar');
-
-    const coisasTextarea = document.querySelector('.bio-block textarea.editable-textarea');
-    const fraseInput = document.querySelector('.bio-block input[type="text"][placeholder="Descreva-se em uma frase."]');
-    const moodInput = document.querySelector('.bio-block input[type="text"][placeholder="Qual seu mood atual?"]');
+    const coisasTextarea = document.getElementById('coisas-que-amo');
+    const fraseInput = document.getElementById('frase-sobre-mim');
+    const moodInput = document.getElementById('meu-mood');
 
     const profilePageUrl = 'seuperfil.html';
 
     if (concluirButton) {
         concluirButton.addEventListener('click', () => {
 
-            const coisas = coisasTextarea ? coisasTextarea.value.trim().split('\n').filter(c => c.trim() !== '') : [];
+            const coisas = coisasTextarea 
+                ? coisasTextarea.value.trim().split('\n').filter(c => c.trim() !== '') 
+                : [];
             const frase = fraseInput ? fraseInput.value.trim() : '';
             const mood = moodInput ? moodInput.value.trim() : '';
 
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             localStorage.setItem('userProfileData', JSON.stringify(profileData));
             
-            alert('Perfil atualizado'); 
+            alert('Perfil atualizado com sucesso!'); 
 
             window.location.href = profilePageUrl;
         });
@@ -31,8 +32,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (voltarButton) {
         voltarButton.addEventListener('click', () => {
-            console.log('Alterações canceladas');
             window.location.href = profilePageUrl;
         });
     }
+
+    const loadFormData = () => {
+        const savedData = localStorage.getItem('userProfileData');
+        if (savedData) {
+            try {
+                const data = JSON.parse(savedData);
+
+                if (data.coisas && coisasTextarea) {
+                    coisasTextarea.value = data.coisas.join('\n');
+                }
+                if (data.fraseBio && fraseInput) {
+                    fraseInput.value = data.fraseBio;
+                }
+                if (data.moodAtual && moodInput) {
+                    moodInput.value = data.moodAtual;
+                }
+            } catch (e) {
+                console.error('Erro ao pré-carregar os dados do formulário:', e);
+            }
+        }
+    };
+    
+    loadFormData();
 });
