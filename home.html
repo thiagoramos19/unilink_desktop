@@ -6,12 +6,10 @@
     <title>UniLink - Login</title>
     <link rel="stylesheet" href="home_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet">
-    <!-- ESTILOS ADICIONAIS PARA O SCROLL APENAS NO FEED E AJUSTE DE POSTAGEM -->
     <style>
-        /* Fix para remover o scroll global e colocar apenas no feed */
         body {
             overflow: hidden;
-            height: 100vh; /* Garante que o body ocupe a altura total do viewport */
+            height: 100vh;
         }
         .organizador {
             height: 100%;
@@ -19,18 +17,15 @@
             flex-direction: column;
         }
         .principal {
-            /* Permite que o conteúdo principal use o espaço restante */
             flex-grow: 1; 
-            overflow-y: hidden; /* Remove scroll do principal */
+            overflow-y: hidden;
             display: flex;
         }
         #timeline-container {
-            /* ATIVA O SCROLL APENAS AQUI */
             flex-grow: 1;
             overflow-y: auto;
         }
 
-        /* Estilo para a imagem recém-adicionada no post */
         .post-imagem {
             max-width: 100%; 
             height: auto;
@@ -38,15 +33,14 @@
             margin-top: 10px;
         }
         
-        /* ESTILO PARA A PRÉVIA DA IMAGEM ANEXADA (EXPANDE O MENU DE POSTAGEM) */
         #preview-imagem {
             max-width: 100%;
             max-height: 200px; 
             margin-top: 10px;
             border-radius: 8px;
             object-fit: contain; 
-            display: none; /* Inicia escondido, o JS controla a visibilidade */
-            border: 1px solid #ddd; /* Dá um destaque visual */
+            display: none;
+            border: 1px solid #ddd;
             padding: 5px;
         }
         
@@ -73,23 +67,17 @@
         <div class="principal">
             <div class="publicar_box">
                 <div class="publicar_post">
-                    <!-- ID para JS -->
                     <textarea type="text" placeholder="O que está acontecendo?" class="post" id="post-textarea"></textarea>
                     <div class="atributos">
-                        <!-- BOTÃO DE ANEXAR FOTO COM ID PARA O JS -->
                         <button type="button" class="arquivo" id="btn-anexar-foto"><img src="img/image.png" alt="Anexar Imagem"></button>
                         <button type="button" class="arquivo"><img src="img/musica.png" alt="Anexar Música"></button>
                     </div>
-                    <!-- PRÉVIA DA IMAGEM (Sem styles inline, usando o #preview-imagem do CSS) -->
                     <img id="preview-imagem" src="" alt="Prévia da Imagem Anexada">
-                    <!-- INPUT FILE ESCONDIDO (Chave para o anexo) -->
                     <input type="file" id="input-file-foto" accept="image/*" style="display: none;">
-                    <!-- BOTÃO POSTAR COM ID PARA o JS -->
                     <button class="postar_botao" id="btn-postar">Postar</button>
                 </div>
             </div>
 
-            <!-- CONTAINER PRINCIPAL DA TIMELINE AGORA TEM ID E SCROLL ATIVO -->
             <div class="timeline" id="timeline-container">
                 <div class="stories">
                     <div class="seu_story">
@@ -99,7 +87,6 @@
                     <button class="ciclano_story"><img src="img/ciclano.png" alt=""></button>
                 </div>
                 
-                <!-- CONTAINER DA CÂMERA (Visão em tela cheia) -->
                 <div id="camera-container" class="hidden">
                     <video id="video-stream" autoplay playsinline></video>
                     <button id="close-btn" onclick="fecharCamera()">Voltar</button>
@@ -108,23 +95,19 @@
                 <div class="filtro_box">
                     <div class="filtro"> 
                         <p>Adicionar filtro</p> 
-                        <!-- ID para JS -->
                         <button id="btn-filtro-icon"><img src="img/filtro_icon.png" alt=""></button>
                     </div>
                 </div>
-                <!-- NOVOS POSTS SERÃO INJETADOS AQUI ABAIXO DO filtro_box -->
                 
                 <div class="post_1 filterable-post">
                     <div class="foto_e_adicionar">
                         <img src="img/ciclano.png" alt="" class="foto_perfil">
-                        <!-- ADICIONEI CLASSE PARA O JS -->
                         <button class="btn-adicionar-amigo"><img src="img/adicionaramigo.png" alt="Adicionar Amigo" class="adicionaramigo"></button>
                     </div>
                     <div class="corpo_do_post">
                         <p><b>Ciclano - CCH - Biblioteconomia</b></p>
                         <p>gente to fazendo uma pesquisa pra P1, podem responder se puderem? Muito obrigado! <a href="bit.ly/unilink_rio">bit.ly/unilink_rio</a></p>
                         <div class="curtir_box"> 
-                            <!-- ADICIONEI CLASSE PARA O JS -->
                             <button class="btn-curtir"><img src="img/like.png" alt="Curtir"></button>
                             <p>123</p>
                         </div>
@@ -134,14 +117,12 @@
                 <div class="post_2 filterable-post">
                     <div class="foto_e_adicionar">
                         <img src="img/fulano.png" alt="" class="foto_perfil">
-                        <!-- ADICIONEI CLASSE PARA O JS -->
                         <button class="btn-adicionar-amigo"><img src="img/adicionaramigo.png" alt="Adicionar Amigo" class="adicionaramigo"></button>
                     </div>
                     <div class="corpo_do_post">
                         <p><b>Fulano - CCET - Sistemas de Informação</b></p>
                         <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5p48T2Tqm7xX3ym7uslGOg?utm_source=generator&theme=0" width="100%" height="152px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                         <div class="estrelas"> 
-                            <!-- ESTRELAS ATIVAS PARA JS -->
                             <button class="estrela" data-valor="1"><img src="img/estrelaacesa.png" alt=""></button>
                             <button class="estrela" data-valor="2"><img src="img/estrelaacesa.png" alt=""></button>
                             <button class="estrela" data-valor="3"><img src="img/estrelaacesa.png" alt=""></button>
@@ -163,7 +144,6 @@
                         </div>
                         
                         <div class="curtir_box"> 
-                            <!-- ADICIONEI CLASSE PARA O JS -->
                             <button class="btn-curtir"><img src="img/like.png" alt="Curtir"></button>
                             <p>123</p>
                         </div>
@@ -205,9 +185,6 @@
     const videoStream = document.getElementById('video-stream');
     let currentStream; 
 
-    /**
-    * Bicha, essa função AQUI abre a câmera!
-    */
     async function abrirCamera() {
         console.log("Abrindo a câmera, respira fundo...");
         
@@ -222,14 +199,10 @@
 
         } catch (err) {
             console.error("Ai, que vexame! Erro ao acessar a câmera: ", err);
-            // Substituí alert() por um console.error mais suave, pois alerts são ruins em iframes.
             console.error("Amada, não consegui acessar sua câmera! Verifique as permissões, viu?");
         }
     }
 
-    /**
-    * E essa função AQUI fecha e limpa a zona!
-    */
     function fecharCamera() {
         console.log("Fechando a câmera. Adeus, close!");
 
@@ -244,20 +217,18 @@
         cameraContainer.classList.add('hidden');
     }
     
-    // --- 1. BOTÃO DE ANEXAR FOTO (Chamar o input file escondido e criar preview) ---
     const btnAnexarFoto = document.getElementById('btn-anexar-foto');
     const inputFileFoto = document.getElementById('input-file-foto');
     const previewImagem = document.getElementById('preview-imagem');
 
     btnAnexarFoto.addEventListener('click', () => {
-        inputFileFoto.click(); // Simula o clique no input de arquivo
+        inputFileFoto.click();
     });
 
     inputFileFoto.addEventListener('change', (event) => {
         if (event.target.files.length > 0) {
             console.log("Foto anexada com sucesso! 💅");
             
-            // Mostrar preview (O JS mantém o controle de visibilidade via style.display)
             const file = event.target.files[0];
             const reader = new FileReader();
             reader.onload = function(e) {
@@ -272,7 +243,6 @@
         }
     });
     
-    // --- 2. AVALIAÇÃO COM ESTRELAS (Acender/apagar as estrelas) ---
     const estrelas = document.querySelectorAll('.estrelas .estrela');
     const estrelaAcesa = 'img/estrelaacesa.png';
     const estrelaApagada = 'img/estrelaapagada.png';
@@ -282,7 +252,6 @@
             const valor = parseInt(estrela.getAttribute('data-valor'));
             
             estrelas.forEach((e, index) => {
-                // Acende a estrela se o índice for menor que o valor clicado
                 if (index < valor) {
                     e.querySelector('img').src = estrelaAcesa;
                 } else {
@@ -293,7 +262,6 @@
         });
     });
 
-    // --- 3. CRIAR POST (Função de postar e injetar no DOM) ---
     const btnPostar = document.getElementById('btn-postar');
     const textAreaPost = document.getElementById('post-textarea');
     const timelineContainer = document.getElementById('timeline-container');
@@ -308,21 +276,17 @@
             return;
         }
         
-        // Gerar URL da imagem (se houver) para o novo post
         if (arquivo) {
             imagemUrl = URL.createObjectURL(arquivo);
         }
 
-        // Simulação do ID e nome do usuário logado para o novo post
         const userNome = "Você - Maria";
-        const userFoto = "img/maria.png"; // Usando a foto do menu_conta
+        const userFoto = "img/seuperfil.png";
 
-        // Estrutura HTML do novo post, usando o formato do post_1. Adicionando 'filterable-post'
         const newPostHTML = `
             <div class="post_1 filterable-post">
                 <div class="foto_e_adicionar">
                     <img src="${userFoto}" alt="Foto de Perfil" class="foto_perfil">
-                    <!-- Usuário logado não tem botão 'Adicionar Amigo' -->
                 </div>
                 <div class="corpo_do_post">
                     <p><b>${userNome}</b></p>
@@ -336,48 +300,37 @@
             </div>
         `;
 
-        // Injetar o novo post no topo da timeline (após o filtro_box)
         const filtroBox = document.querySelector('.filtro_box');
         filtroBox.insertAdjacentHTML('afterend', newPostHTML);
 
         alert("Post enviado com sucesso!");
 
-        // Limpar os campos
         textAreaPost.value = '';
         inputFileFoto.value = null; 
         previewImagem.src = '';
         previewImagem.style.display = 'none';
 
-        // Reaplicar listeners de curtir para o novo post!
         aplicarListenersDePostagem();
     });
 
-    // --- 4. FILTRO (Função que agora esconde e mostra posts de verdade) ---
     const btnFiltroIcon = document.getElementById('btn-filtro-icon');
     
     btnFiltroIcon.addEventListener('click', () => {
-        // Encontra o container do filtro e troca a classe 'ativo'
         const filtroDiv = btnFiltroIcon.closest('.filtro');
         filtroDiv.classList.toggle('ativo');
         
-        // Verifica se a classe 'ativo' está presente após o toggle
         const isActived = filtroDiv.classList.contains('ativo');
         
-        // Seleciona TODOS os posts filtráveis (incluindo os recém-criados)
         const allPosts = document.querySelectorAll('#timeline-container .filterable-post');
 
         allPosts.forEach(post => {
-            // Se o filtro estiver ATIVADO
             if (isActived) {
-                // Se for o post de emprego (.post_3), mostra
                 if (post.classList.contains('post_3')) {
-                    post.style.display = 'flex'; // Usando 'flex' assumindo o layout original
+                    post.style.display = 'flex';
                 } else {
-                    // Se não for o post de emprego, esconde
                     post.style.display = 'none';
                 }
             } else {
-                // Se o filtro estiver DESATIVADO, mostra todos
                 post.style.display = 'flex';
             }
         });
@@ -389,15 +342,11 @@
         }
     });
 
-    // --- FUNÇÕES DE INTERAÇÃO (Aplicadas na inicialização e em novos posts) ---
     function aplicarListenersDePostagem() {
         
-        // 5. CURTIR BUTTONS
-        // Seleciona todos os botões de curtir existentes e novos
         const btnCurtir = document.querySelectorAll('.curtir_box .btn-curtir');
         
         btnCurtir.forEach(button => {
-            // Verifica se o listener já foi adicionado
             if (!button.dataset.listenerAdded) {
                 button.addEventListener('click', () => {
                     const curtirBox = button.closest('.curtir_box');
@@ -405,40 +354,34 @@
                     let count = parseInt(countElement.textContent) || 0;
 
                     if (button.classList.contains('liked')) {
-                        // Descurtir
                         count--;
                         button.classList.remove('liked');
                         console.log("Post descurtido! 💔");
                     } else {
-                        // Curtir
                         count++;
                         button.classList.add('liked');
                         console.log("Post curtido! ❤️");
                     }
                     countElement.textContent = count;
                 });
-                button.dataset.listenerAdded = 'true'; // Marca que o listener foi adicionado
+                button.dataset.listenerAdded = 'true';
             }
         });
 
-        // 6. ADICIONAR AMIGO BUTTONS
         const btnAdicionarAmigo = document.querySelectorAll('.btn-adicionar-amigo');
 
         btnAdicionarAmigo.forEach(button => {
             if (!button.dataset.listenerAdded) {
                 button.addEventListener('click', () => {
-                    // 1. Simular o alerta de "adicionado" no console
                     alert("Amigo adicionado com sucesso!");
                     
-                    // 2. Desaparecer o botão
                     button.style.display = 'none';
                 });
-                button.dataset.listenerAdded = 'true'; // Marca que o listener foi adicionado
+                button.dataset.listenerAdded = 'true';
             }
         });
     }
 
-    // Aplica os listeners na inicialização da página
     aplicarListenersDePostagem();
 </script>
 </html>
