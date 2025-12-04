@@ -85,7 +85,7 @@ header{
 
 .publicar_post{
    width: 100%;
-    height: 30%;
+    
     display: flex; 
     justify-content: space-between;
     align-items: center;
@@ -333,3 +333,46 @@ header{
 .proxeventos{
     text-align: center;
 }
+
+
+#camera-container {
+    position: fixed; /* Fixa na tela */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Largura total */
+    height: 100vh; /* Altura total */
+    background: black; /* Fundo preto enquanto a câmera carrega */
+    display: flex; /* Pra centralizar o botão depois */
+    justify-content: center;
+    align-items: flex-end; /* Alinha o botão na parte de baixo */
+    z-index: 1000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#video-stream {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz o vídeo preencher a tela sem distorcer, tipo modelo! */
+}
+
+#close-btn {
+    position: relative; /* Fica por cima do vídeo */
+    margin-bottom: 5vh; /* Afasta um pouco do rodapé */
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #ff4d4d; /* Vermelhinho pra chamar atenção */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1001; /* Garante que fique acima do vídeo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
